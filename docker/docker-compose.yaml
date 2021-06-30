@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  redis-cluster:
+    build: redis-cluster
+    container_name: redis-cluster-example
+    ports:
+      - "7000:7000"
+      - "7001:7001"
+      - "7002:7002"
+    environment:
+      - REDIS_MASTERS=3
+      - REDIS_SLAVES_PER_MASTER=0
+
+
